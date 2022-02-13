@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workmotion_test/src/confic/theme.dart' as CustomTheme;
+import 'package:workmotion_test/src/screen/Home/home_screen.dart';
 
 class ButtonSumWidget extends StatelessWidget {
   const ButtonSumWidget({Key? key}) : super(key: key);
@@ -28,7 +29,12 @@ class ButtonSumWidget extends StatelessWidget {
                       Container(
                         width: 120,
                         child: FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()));
+                          },
                           child: Text(
                             'ชำระเงิน',
                             style: TextStyle(color: Colors.white),

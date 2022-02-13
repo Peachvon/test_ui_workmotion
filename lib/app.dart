@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workmotion_test/src/screen/Home/home_screen.dart';
 import 'package:workmotion_test/src/screen/menu/menu_screen.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const Menu(),
+      home: const HomeScreen(),
     );
   }
 }

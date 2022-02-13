@@ -41,16 +41,12 @@ class _PrimeNumberScreenState extends State<PrimeNumberScreen> {
                     child: TextField(
                       keyboardType: TextInputType.number,
                       controller: inputController,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Mitr',
-                          fontSize: 20),
-                      decoration: InputDecoration(),
+                      style: TextStyle(fontSize: 20),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 14),
               Container(
                 width: 300,
                 child: FlatButton(
@@ -83,7 +79,7 @@ class _PrimeNumberScreenState extends State<PrimeNumberScreen> {
 
   void Calculate() {
     int X = int.parse(inputController!.text);
-    int J = 0;
+
     PN = [];
 
     for (int i = 1; i <= X; i++) {
@@ -91,11 +87,8 @@ class _PrimeNumberScreenState extends State<PrimeNumberScreen> {
           (i != 2 && i != 3 && i != 5 && i != 7)) {
       } else {
         PN.add(i);
-
-        J += 1;
       }
     }
     setState(() {});
-    print(PN.toString());
   }
 }

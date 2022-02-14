@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, prefer_const_constructors
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:workmotion_test/MyIcon/my_icon_icons.dart';
 import 'package:workmotion_test/src/model/cart_model.dart';
@@ -22,9 +23,10 @@ class _ListCartWidgetState extends State<ListCartWidget> {
     double Width = MediaQuery.of(context).size.width;
     double Height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding:
+          const EdgeInsets.only(top: 4.0, bottom: 4.0, left: 4.0, right: 4.0),
       child: Container(
-        height: Height * 0.7,
+        height: Height * 0.59,
         child: ListView.builder(
           itemCount: Cart.length,
           itemBuilder: (BuildContext context, int index) {
@@ -73,10 +75,12 @@ class _ListCartWidgetState extends State<ListCartWidget> {
                             children: [
                               Spacer(),
                               Container(
-                                width: 230,
-                                child: Text(
+                                width: Width * 0.5,
+                                child: AutoSizeText(
                                   Product[Cart[index] - 1]['detail'],
                                   style: TextStyle(fontSize: 12),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                               Spacer(),
